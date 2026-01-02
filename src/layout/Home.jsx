@@ -9,7 +9,7 @@ import { Outlet } from 'react-router';
 
 const Home = () => {
     return (
-        <div>
+        <div className='container mx-auto'>
          <header>
             <Header></Header>
             <section>
@@ -19,7 +19,7 @@ const Home = () => {
                 <Navbar></Navbar>
             </nav>
          </header>
-         <main className='w-11/12 mx-auto *:border grid grid-cols-12'>
+         <main className='w-11/12 mx-auto  grid grid-cols-12 mt-5 gap-5'>
             <aside className='col-span-3'>
                 <Left_side></Left_side>
             </aside>
