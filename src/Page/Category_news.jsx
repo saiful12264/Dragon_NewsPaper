@@ -26,7 +26,7 @@ const Category_news = () => {
         setCategories(dataNews);
     }
    },[id,data]);
-   console.log(categories);
+   
 
   return <div>
     <h2 className="font-semibold text-primary mb-3">Dragon News Home</h2>

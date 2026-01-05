@@ -1,38 +1,39 @@
-import React from 'react';
-import Header from '../Compoent/Header';
-import Latest_news from '../Compoent/Latest_news';
-import Navbar from '../Compoent/Navbar';
-import Left_side from '../Compoent/homelayout/Left_side';
-import Right_side from '../Compoent/homelayout/Right_side';
-import { Outlet } from 'react-router';
-
+import React from "react";
+import Header from "../Compoent/Header";
+import Latest_news from "../Compoent/Latest_news";
+import Navbar from "../Compoent/Navbar";
+import Left_side from "../Compoent/homelayout/Left_side";
+import Right_side from "../Compoent/homelayout/Right_side";
+import { Outlet, useNavigate } from "react-router";
+import Loading from "../Compoent/Loading";
 
 const Home = () => {
-    return (
-        <div className='container mx-auto'>
-         <header>
-            <Header></Header>
-            <section>
-                <Latest_news></Latest_news>
-            </section>
-            <nav className='w-11/12 mx-auto'>
-                <Navbar></Navbar>
-            </nav>
-         </header>
-         <main className='w-11/12 mx-auto  grid grid-cols-12 mt-5 gap-5'>
-            <aside className='col-span-3'>
-                <Left_side></Left_side>
-            </aside>
-            <section className="main col-span-6">
-                <Outlet></Outlet>
-
-            </section>
-           <aside className='col-span-3'>
-             <Right_side></Right_side>
-           </aside>
-         </main>
-        </div>
-    );
+  const { state } = useNavigate();
+  console.log(state);
+  return (
+    <div className="container mx-auto">
+      <header>
+        <Header></Header>
+        <section>
+          <Latest_news></Latest_news>
+        </section>
+        <nav className="w-11/12 mx-auto">
+          <Navbar></Navbar>
+        </nav>
+      </header>
+      <main className="w-11/12 mx-auto  grid grid-cols-12 mt-5 gap-5">
+        <aside className="col-span-3 sticky top-0 h-fit">
+          <Left_side></Left_side>
+        </aside>
+        <section className="main col-span-6">
+          {state == "loading" ? <Loading></Loading> : <Outlet></Outlet>}
+        </section>
+        <aside className="col-span-3 sticky top-0 h-fit">
+          <Right_side></Right_side>
+        </aside>
+      </main>
+    </div>
+  );
 };
 
 export default Home;
