@@ -35,7 +35,7 @@ const Auth_provider = ({ children }) => {
        
     })
   },[auth,user]);
-  console.log(loading,user);
+ 
   
 
   const authInfo = {

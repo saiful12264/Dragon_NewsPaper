@@ -9,7 +9,7 @@ import Loading from "../Compoent/Loading";
 
 const Home = () => {
   const { state } = useNavigate();
-  console.log(state);
+
   return (
     <div className="container mx-auto">
       <header>

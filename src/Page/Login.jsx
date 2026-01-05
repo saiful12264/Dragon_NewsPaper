@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const Login = () => {
   const location = useLocation();
-  console.log(location);
+
   const navigate = useNavigate();
   const form = location.state || '/';
   const {signInWithEmailAndPasswordFunc} = use(AuthContext);

@@ -35,8 +35,7 @@ const Register = () => {
     const errorCode = error.code;
     const errorMessage = error.message;
     toast.error(errorMessage);
-    console.log(errorMessage);
-    // ..
+   
   });
     
 
